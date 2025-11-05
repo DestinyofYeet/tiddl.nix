@@ -1,4 +1,4 @@
-{ python3Packages, pkgs, fetchPypi, ... }:
+{ python3Packages, pkgs, fetchPypi, lib, ... }:
 let
   version = "2.8.0";
 
@@ -39,5 +39,13 @@ in python3Packages.buildPythonApplication rec {
     repo = "tiddl";
     tag = "v${version}";
     hash = "sha256-ZKIrIjTv6apDjRDYK9RhvqpPC1g9gDJMka32Aa4bD9o=";
+  };
+
+  meta = {
+    homepage = "https://github.com/oskvr37/tiddl";
+    description =
+      "TIDDL is the Python CLI application that allows downloading Tidal tracks and videos!";
+    license = lib.licenses.asl20;
+    mainProgram = "tiddl";
   };
 }
